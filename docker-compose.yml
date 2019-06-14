@@ -1,0 +1,21 @@
+version: '3'
+volumes:
+  dados:
+services:
+    app:
+        build: .
+        command: yarn start
+        # command: yarn test
+        ports: 
+          - "3000:3000"
+        volumes:
+          - .:/usr/app
+        depends_on:
+          - db
+    db:
+        image: postgres:9.6
+        volumes:
+        # Volume dos dados
+          - dados:/var/lib/postgresql/data
+        ports:
+          - 5432:5432
