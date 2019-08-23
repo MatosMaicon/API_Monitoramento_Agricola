@@ -65,7 +65,7 @@ describe("Acquisitions Controller", () => {
       .post(`${process.env.APP_URI}/acquisition`)
       .send(req);
 
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(200);
   });
 
 });
