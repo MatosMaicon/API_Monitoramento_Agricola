@@ -11,10 +11,8 @@ docker build -t node_monitoramento_agricola_image_build .
       }
     }
     stage('Test') {
-      parallel {
-        stage('Run docker') {
-          steps {
-            sh '''#!/bin/sh
+      steps {
+        sh '''#!/bin/sh
 
 # Subindo o container de teste
 docker run -d -p 5432:5432 --name=db postgres:9.6
@@ -26,12 +24,6 @@ do
   sleep 1
 done
 sleep 2
-'''
-          }
-        }
-        stage('run test') {
-          steps {
-            sh '''#!/bin/sh
 
 docker exec -i app yarn test
 exit_code=$?
@@ -39,13 +31,12 @@ exit_code=$?
 # Derrubando o container velho
 # docker rm -f app
 # docker rm -f db
+echo "Fim dos testes"
 
 
 if [ $exit_code -ne 0 ]; then
   exit 1
 fi'''
-          }
-        }
       }
     }
   }
