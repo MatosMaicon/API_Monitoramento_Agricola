@@ -29,8 +29,8 @@ docker exec -i app yarn test
 exit_code=$?
 
 # Derrubando o container velho
-# docker rm -f app
-# docker rm -f db
+docker rm -f app
+docker rm -f db
 echo "Fim dos testes"
 
 
