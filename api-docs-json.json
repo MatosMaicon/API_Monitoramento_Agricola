@@ -75,7 +75,7 @@
             "bearer": []
           }
         ]
-      },
+      }
     },
     "/api/v1/customers": {
       "get": {
@@ -854,7 +854,7 @@
             "required": false,
             "in": "query",
             "schema": {
-              "type": "date"
+              "type": "string"
             }
           }
         ],
@@ -1154,7 +1154,7 @@
             "required": false,
             "in": "query",
             "schema": {
-              "type": "date"
+              "type": "string"
             }
           }
         ],
@@ -6048,7 +6048,7 @@
         "type": "object",
         "properties": {
           "referenceDate": {
-            "type": "date"
+            "type": "string"
           },
           "inquiryAuthorName": {
             "type": "string",
@@ -7289,7 +7289,7 @@
         "type": "object",
         "properties": {
           "referenceDate": {
-            "type": "date"
+            "type": "string"
           },
           "totalFinancialCost": {
             "$ref": "#/components/schemas/CurrencyValueDTO"
@@ -7649,7 +7649,7 @@
             ]
           },
           "settlementDate": {
-            "type": "date"
+            "type": "string"
           }
         },
         "required": [
@@ -7870,7 +7870,7 @@
             "type": "string"
           },
           "paymentInitialDate": {
-            "type": "date"
+            "type": "string"
           },
           "documentTerm": {
             "type": "number"
@@ -8086,7 +8086,7 @@
             "maximum": 500000000
           },
           "documentReferenceDate": {
-            "type": "date"
+            "type": "string"
           },
           "type": {
             "type": "string",
@@ -11921,11 +11921,11 @@
             }
           },
           "activityStartDate": {
-            "type": "date",
+            "type": "string",
             "nullable": true
           },
           "activityEndDate": {
-            "type": "date",
+            "type": "string",
             "nullable": true
           },
           "ieStatus": {
@@ -12105,10 +12105,10 @@
             "type": "string"
           },
           "activityStartDate": {
-            "type": "date"
+            "type": "string"
           },
           "activityEndDate": {
-            "type": "date"
+            "type": "string"
           },
           "fantasyName": {
             "type": "string"
@@ -12199,11 +12199,11 @@
             }
           },
           "activityStartDate": {
-            "type": "date",
+            "type": "string",
             "nullable": true
           },
           "activityEndDate": {
-            "type": "date",
+            "type": "string",
             "nullable": true
           },
           "ieStatus": {
