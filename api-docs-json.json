@@ -10,15 +10,19 @@
                 "in": "body",
                 "required":true,
                 "schema": {
-                  "$ref":"#/components/schemas/Request login model"
+                  "$ref":"#/components/schemas/Requestloginmodel"
                 }
             }
           ],
           "responses": {
               "200": {
                   "description":"Success",
-                  "schema": {
-                    "$ref":"#/components/schemas/Response login model"
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref":"#/components/schemas/Responseloginmodel"
+                      }
+                    }
                   }
               },
               "401": {
@@ -2604,28 +2608,32 @@
   "info": {
     "title": "Tarken Hub API",
     "description": "The HUB API is organized in REST. Our API has predictable resource oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses HTTP response codes, authentication and verbs. You can use this API to list rural properties, customers, registration data, credit bureau, compliance, related people, lawsuits, state registration, warehouses, seasons, areas, productive areas, CPR, SCR, IRPF and etc, it is also possible to request analyzes of this information.",
-    "version": "0.0.1",
-    "contact": {},
-    "termsOfService":"",
-    "securityDefinitions": {
+    "version": "0.0.1"
+  },
+  "securityDefinitions": {
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "JWT",
         "description": "Authentication to the API is performed via Bearer authentication. Provide your token as the bearer value."
       }
-    }
   },
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
   "tags": [],
   "servers": [],
   "components": {
-    "securitySchemes": {
+  "securitySchemes": {
       "bearer": {
         "scheme": "bearer",
         "bearerFormat": "JWT",
         "type": "http"
       }
-    },
+    },  
     "schemas": {
       "NaturalPersonInfoDTO": {
         "type": "object",
@@ -4084,14 +4092,6 @@
           },
           "name": {
             "type": "string"
-          },
-          "currentCrop": {
-            "description": "The crop on the current season of this area. Will be `undefined` if no crop was found on this area",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CropDTO"
-              }
-            ]
           }
         },
         "required": [
@@ -12891,7 +12891,7 @@
           "label"
         ]
       },
-      "Request login model": {
+      "Requestloginmodel": {
         "type":"object",
         "properties": {
           "email": {
@@ -12907,7 +12907,7 @@
         },
         "required": ["email","password"]
       },
-      "Response login model": {
+      "Responseloginmodel": {
         "type":"object", 
         "properties": {
           "token": { 
