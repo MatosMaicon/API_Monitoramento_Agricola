@@ -1,35 +1,37 @@
 {
   "openapi": "3.0.0",
   "paths": {
-     "/api/v1/auth/login": {
+    "/api/v1/auth/login": {
       "post": {
-          "operationId":"AuthController_login",
-          "parameters":[
-            {
-                "name": "",
-                "in": "body",
-                "required":true,
-                "schema": {
-                  "$ref":"#/components/schemas/Requestloginmodel"
-                }
+        "operationId": "AuthController_login",
+        "parameters": [
+          {
+            "name": "",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Requestloginmodel"
             }
-          ],
-          "responses": {
-              "200": {
-                  "description":"Success",
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "$ref":"#/components/schemas/Responseloginmodel"
-                      }
-                    }
-                  }
-              },
-              "401": {
-                  "description":"Unauthorized"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Responseloginmodel"
+                }
               }
-            },
-          "tags":["Auth"]
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "tags": [
+          "Auth"
+        ]
       }
     },
     "/api/v1/person-profiles/{personProfileId}": {
@@ -2611,12 +2613,12 @@
     "version": "0.0.1"
   },
   "securityDefinitions": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT",
-        "description": "Authentication to the API is performed via Bearer authentication. Provide your token as the bearer value."
-      }
+    "bearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT",
+      "description": "Authentication to the API is performed via Bearer authentication. Provide your token as the bearer value."
+    }
   },
   "produces": [
     "application/json"
@@ -2627,13 +2629,13 @@
   "tags": [],
   "servers": [],
   "components": {
-  "securitySchemes": {
+    "securitySchemes": {
       "bearer": {
         "scheme": "bearer",
         "bearerFormat": "JWT",
         "type": "http"
       }
-    },  
+    },
     "schemas": {
       "NaturalPersonInfoDTO": {
         "type": "object",
@@ -12892,31 +12894,36 @@
         ]
       },
       "Requestloginmodel": {
-        "type":"object",
+        "type": "object",
         "properties": {
           "email": {
-            "type":"string",
+            "type": "string",
             "description": "User email",
             "example": "123@email.com"
           },
           "password": {
-            "type":"string",
+            "type": "string",
             "description": "User password",
             "example": "123"
           }
         },
-        "required": ["email","password"]
+        "required": [
+          "email",
+          "password"
+        ]
       },
       "Responseloginmodel": {
-        "type":"object", 
+        "type": "object",
         "properties": {
-          "token": { 
-            "type":"string",
+          "token": {
+            "type": "string",
             "description": "Bearer token",
             "example": "123"
           }
         },
-        "required":["token"]
+        "required": [
+          "token"
+        ]
       }
     }
   }
