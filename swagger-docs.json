@@ -4,16 +4,17 @@
      "/api/v1/auth/login": {
       "post": {
           "operationId":"AuthController_login",
-          "parameters":[
-            {
-                "name": "",
-                "in": "body",
-                "required":true,
+          "parameters":[],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref":"#/components/schemas/Requestloginmodel"
                 }
+              }
             }
-          ],
+          },
           "responses": {
               "200": {
                   "description":"Success",
@@ -3274,8 +3275,7 @@
             "$ref": "#/components/schemas/PersonProfileShortDTO"
           },
           "enriched": {
-            "type": "number",
-            "enum": []
+            "type": "boolean"
           }
         },
         "required": [
@@ -3801,7 +3801,7 @@
           "profileAnalysisRequestComponents": {
             "type": "array",
             "items": {
-              "type": "array"
+              "type": "object"
             }
           }
         },
