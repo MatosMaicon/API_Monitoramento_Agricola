@@ -2609,7 +2609,7 @@
   "info": {
     "title": "Tarken Hub API",
     "description": "The HUB API is organized in REST. Our API has predictable resource oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses HTTP response codes, authentication and verbs. You can use this API to list rural properties, customers, registration data, credit bureau, compliance, related people, lawsuits, state registration, warehouses, seasons, areas, productive areas, CPR, SCR, IRPF and etc, it is also possible to request analyzes of this information.",
-    "version": "0.0.1"
+    "version": "1.0.0"
   },
   "tags": [],
   "servers": [],
