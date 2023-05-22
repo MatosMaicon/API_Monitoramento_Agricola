@@ -7165,8 +7165,10 @@
     "securitySchemes": {
       "bearer": {
         "scheme": "bearer",
+        "in":"header",
         "bearerFormat": "JWT",
-        "type": "http"
+        "type": "http",
+        "description": "Authentication to the API is performed via Bearer authentication. Provide your token as the bearer value."
       }
     },
     "schemas": {
